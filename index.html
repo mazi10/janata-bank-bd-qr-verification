@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Account Certificate Verification</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #f7f9fa; margin: 0; padding: 15px; }
+        .container { max-width: 500px; margin: 20px auto; background: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .header { border-bottom: 1px solid #eaeaea; padding-bottom: 15px; margin-bottom: 20px; }
+        .status-badge { background-color: #e6f4ea; color: #137333; padding: 6px 14px; font-size: 13px; font-weight: bold; display: inline-block; border-radius: 20px; margin-top: 12px; text-align: center; width: 100%; box-sizing: border-box; }
+        .info-text { text-align: center; font-size: 12px; color: #666; margin-bottom: 20px; }
+        .card { background: #fff; border: 1px solid #dcdcdc; border-left: 5px solid #1a73e8; padding: 12px 15px; margin-bottom: 12px; border-radius: 6px; }
+        .card label { display: block; font-size: 12px; font-weight: bold; margin-bottom: 4px; }
+        .card span { font-size: 16px; color: #202124; font-weight: bold; display: inline-block; width: 100%; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <div class="header" id="headerBox">
+        <span id="logoArea"></span>
+        <h2 id="mainTitle" style="margin: 0;">Account Certificate Verification</h2>
+        <div class="status-badge">✔️ VERIFICATION DETAILS</div>
+    </div>
+    
+    <div class="info-text">
+        The following information was retrieved from the scanned QR Code and verified.
+    </div>
+
+    <div id="contentArea">
+        <div class="card" id="boxId" style="border-left-color: #1a73e8;">
+            <label style="color: #1a73e8;">Account No / ID</label>
+            <span id="resId">লোড হচ্ছে...</span>
+        </div>
+        <div class="card" id="boxName" style="border-left-color: #d93025;">
+            <label style="color: #d93025;">Account Name</label>
+            <span id="resName">লোড হচ্ছে...</span>
+        </div>
+        <div class="card" id="boxAmount" style="border-left-color: #188038;">
+            <label style="color: #188038;">Report Date Balance / Salary Paid</label>
+            <span id="resAmount">লোড হচ্ছে...</span>
+        </div>
+        <div class="card" id="boxDate" style="border-left-color: #1a73e8;">
+            <label style="color: #1a73e8;">Report Generation Date</label>
+            <span id="resDate">লোড হচ্ছে...</span>
+        </div>
+    </div>
+</div>
+
+<script src="data.js"></script>
+<script>
+    const urlParams = new URLSearchParams(window.location.search);
+    const id = urlParams.get('id');
+
+    if (id && typeof employeesData !== 'undefined' && employeesData[id]) {
+        const emp = employeesData[id];
+        
+        document.getElementById('resId').innerText = id;
+
+        if (emp.name) { document.getElementById('resName').innerText = emp.name; } else { document.getElementById('boxName').style.display = 'none'; }
+        if (emp.amount) { document.getElementById('resAmount').innerText = emp.amount; } else { document.getElementById('boxAmount').style.display = 'none'; }
+        if (emp.date) { document.getElementById('resDate').innerText = emp.date; } else { document.getElementById('boxDate').style.display = 'none'; }
+
+        const titleEl = document.getElementById('mainTitle');
+        titleEl.innerText = emp.htext || "Account Certificate Verification";
+        titleEl.style.fontSize = emp.hsize || "18px";
+        titleEl.style.color = emp.hcolor || "#333333";
+
+        document.getElementById('headerBox').style.textAlign = emp.halign || "center";
+
+        if (emp.lurl) {
+            document.getElementById('logoArea').innerHTML = `<img src="${emp.lurl}" style="height: ${emp.lsize || '40px'}; vertical-align: middle; margin-right: 8px;">`;
+        }
+    } else {
+        document.getElementById('contentArea').innerHTML = `<div style="text-align:center; color:red; font-weight:bold; padding:20px;">দুঃখিত, এই আইডির কোনো তথ্য পাওয়া যায়নি!</div>`;
+    }
+</script>
+
+</body>
+</html>
