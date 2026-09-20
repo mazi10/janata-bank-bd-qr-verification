@@ -3,47 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Janata Bank PLC. - Secure Digital Verification Certificate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <title>Janata Bank PLC. - Official Digital Certificate</title>
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&family=Noto+Serif+Bengali:wght@500;600;700&family=Arial:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; }
         body { 
-            font-family: 'Inter', 'Hind Siliguri', sans-serif; 
-            background: linear-gradient(135deg, #f0fdf4 0%, #e2e8f0 100%); 
+            font-family: Arial, sans-serif; 
+            background: #f4f6f8; 
             margin: 0; 
             padding: 30px 15px; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 
             min-height: 100vh; 
-            color: #0f172a; 
+            color: #222222; 
         }
 
-        /* Certificate Wrapper - Ultra Modern Authentic Bank Style */
+        /* Certificate Wrapper - 100% Authentic Bank Document Style */
         .doc-wrapper {
             background: #ffffff;
             width: 100%;
-            max-width: 620px;
-            padding: 45px 40px;
-            border-radius: 16px;
-            box-shadow: 0 25px 50px rgba(0, 106, 78, 0.12);
-            border: 1px solid #bbf7d0;
+            max-width: 650px;
+            padding: 40px;
+            border-radius: 4px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            border: 1px solid #d1d5db;
             position: relative;
             overflow: hidden;
         }
 
-        /* Background Watermark Logo */
+        /* Real Watermark Logo Background */
         .doc-wrapper::before {
             content: "";
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 320px;
-            height: 320px;
+            width: 380px;
+            height: 380px;
             background: url('janata-logo.png') no-repeat center center;
             background-size: contain;
-            opacity: 0.04;
+            opacity: 0.06;
             pointer-events: none;
             z-index: 0;
         }
@@ -53,144 +53,88 @@
             z-index: 1;
         }
 
-        /* Top Vibrant Accent Border */
-        .top-accent {
-            position: absolute;
-            top: -45px;
-            left: -40px;
-            right: -40px;
-            height: 6px;
-            background: linear-gradient(90deg, #006a4e, #10b981, #047857);
-        }
-
-        /* Centered Bank Header */
-        .bank-header-center {
+        /* Official Bank Header */
+        .bank-header {
             text-align: center;
-            border-bottom: 2px solid #e2e8f0;
-            padding-bottom: 25px;
+            border-bottom: 3px solid #00563f;
+            padding-bottom: 20px;
             margin-bottom: 25px;
         }
-        .bank-logo-center {
-            height: 65px;
+        .bank-logo {
+            height: 70px;
             width: auto;
             object-fit: contain;
-            margin-bottom: 12px;
+            margin-bottom: 10px;
         }
-        .bank-header-center h1 {
-            font-size: 26px;
-            color: #006a4e;
+        .bank-header h1 {
+            font-family: 'Times New Roman', Times, serif, 'Noto Serif Bengali';
+            font-size: 24px;
+            color: #00563f;
             margin: 0;
-            font-weight: 800;
+            font-weight: 700;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
-        .bank-header-center p {
-            font-size: 12px;
-            color: #64748b;
-            margin: 5px 0 0 0;
+        .bank-header p {
+            font-size: 11.5px;
+            color: #555555;
+            margin: 4px 0 0 0;
             text-transform: uppercase;
             letter-spacing: 1.5px;
             font-weight: 600;
         }
 
-        /* Certificate Title Section */
-        .cert-title-box {
+        /* Document Title */
+        .doc-title-area {
             text-align: center;
             margin-bottom: 25px;
-            background: #f0fdf4;
-            padding: 16px;
-            border-radius: 10px;
-            border: 1px dashed #059669;
         }
-        .cert-title-box h3 {
-            font-size: 16px;
-            color: #006a4e;
+        .doc-title-area h2 {
+            font-size: 15px;
+            color: #00563f;
             text-transform: uppercase;
-            margin: 0 0 5px 0;
+            margin: 0;
             letter-spacing: 0.8px;
             font-weight: 700;
-        }
-        .cert-title-box span {
-            font-size: 12.5px;
-            color: #475569;
-            font-weight: 500;
+            border-bottom: 1px solid #e5e7eb;
+            padding-bottom: 10px;
+            display: inline-block;
         }
 
-        /* Modern Detailed Statement Table */
+        /* Authentic Data Table */
         .statement-table {
             width: 100%;
             border-collapse: collapse;
             margin-bottom: 25px;
-            background: #fcfcfc;
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid #e2e8f0;
+            border: 1px solid #cbd5e1;
         }
-        .statement-table tr {
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .statement-table tr:last-child {
-            border-bottom: none;
-        }
-        .statement-table td {
-            padding: 16px 18px;
-            font-size: 14.5px;
+        .statement-table th, .statement-table td {
+            border: 1px solid #cbd5e1;
+            padding: 12px 15px;
+            font-size: 14px;
         }
         .statement-table td.label-col {
-            color: #475569;
+            background-color: #f8fafc;
+            color: #334155;
             font-weight: 600;
-            width: 45%;
+            width: 42%;
         }
         .statement-table td.value-col {
+            background-color: #ffffff;
             color: #0f172a;
             font-weight: 700;
-            text-align: right;
-            width: 55%;
+            text-align: left;
+            width: 58%;
         }
         .statement-table td.value-col.highlight {
-            color: #006a4e;
-            font-size: 18px;
+            color: #00563f;
+            font-size: 16px;
             font-weight: 800;
         }
-
-        /* Bottom Status & Security Stamp Section */
-        .bottom-status-section {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border: 1px solid #cbd5e1;
-            padding: 18px;
-            border-radius: 10px;
-            margin-bottom: 25px;
-        }
-        .status-badge-box {
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-        .auth-badge {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-            color: #ffffff;
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            display: inline-block;
-            box-shadow: 0 3px 8px rgba(5, 150, 105, 0.2);
-            text-align: center;
-        }
-        .stamp-right {
-            font-family: 'Cinzel', serif;
-            font-size: 11.5px;
-            color: #006a4e;
-            font-weight: 700;
-            background: #ffffff;
-            border: 1.5px solid #006a4e;
-            padding: 6px 12px;
-            border-radius: 6px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.04);
+        .statement-table td.success-col {
+            color: #15803d;
+            font-weight: 800;
+            letter-spacing: 0.5px;
         }
 
         /* Error Box */
@@ -198,15 +142,14 @@
             background: #fff;
             padding: 40px;
             text-align: center;
-            border-radius: 8px;
             border: 1px solid #cbd5e1;
         }
 
-        /* Footer */
+        /* Official Footer */
         .doc-footer {
-            margin-top: 20px;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 18px;
+            margin-top: 25px;
+            border-top: 1px solid #e5e7eb;
+            padding-top: 15px;
             text-align: center;
         }
         .footer-links {
@@ -214,11 +157,11 @@
             justify-content: center;
             flex-wrap: wrap;
             gap: 12px;
-            font-size: 11.5px;
-            margin-bottom: 10px;
+            font-size: 11px;
+            margin-bottom: 8px;
         }
         .footer-links a {
-            color: #006a4e;
+            color: #00563f;
             text-decoration: none;
             font-weight: 600;
         }
@@ -229,33 +172,31 @@
             color: #cbd5e1;
         }
         .copyright-text {
-            font-size: 11px;
-            color: #94a3b8;
+            font-size: 10.5px;
+            color: #71717a;
         }
     </style>
 </head>
 <body>
 
 <div class="doc-wrapper" id="mainCard">
-    <div class="top-accent"></div>
     <div class="content-layer">
 
-        <!-- Centered Bank Header with Watermark & Big Title -->
-        <div class="bank-header-center">
-            <img src="janata-logo.png" alt="Janata Bank Logo" class="bank-logo-center" onerror="this.src='https://i.ibb.co.com/84c3n7P/Janata-Bank-Limited-Logo.png'">
+        <!-- Bank Header -->
+        <div class="bank-header">
+            <img src="janata-logo.png" alt="Janata Bank Logo" class="bank-logo" onerror="this.src='https://i.ibb.co.com/84c3n7P/Janata-Bank-Limited-Logo.png'">
             <div id="headerBox">
                 <h1>JANATA BANK PLC.</h1>
-                <p>Central Core Verification Gateway</p>
+                <p>Head Office, 43 Dilkusha C/A, Dhaka-1000, Bangladesh</p>
             </div>
         </div>
 
-        <!-- Certificate Title Box -->
-        <div class="cert-title-box">
-            <h3>Official Digital Balance & Statement Certificate</h3>
-            <span>Secured & Authenticated via Janata Bank Cryptographic QR Protocol</span>
+        <!-- Document Title -->
+        <div class="doc-title-area">
+            <h2>Official Balance & Statement Verification Record</h2>
         </div>
 
-        <!-- Data Table -->
+        <!-- Data Table (With Verification Status inside table) -->
         <table class="statement-table">
             <tr>
                 <td class="label-col">Account Number</td>
@@ -273,18 +214,11 @@
                 <td class="label-col">Report Generation Date</td>
                 <td class="value-col" id="date">---</td>
             </tr>
+            <tr>
+                <td class="label-col">Verification Status</td>
+                <td class="value-col success-col" id="statusText">VERIFIED SUCCESSFUL</td>
+            </tr>
         </table>
-
-        <!-- Bottom Status & Security Section -->
-        <div class="bottom-status-section">
-            <div class="status-badge-box">
-                <span style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 2px;">DOCUMENT STATUS</span>
-                <div class="auth-badge" id="statusText">✔ 100% VERIFIED SUCCESS</div>
-            </div>
-            <div class="stamp-right">
-                JB-SECURE-256
-            </div>
-        </div>
 
         <!-- Footer Links -->
         <div class="doc-footer">
@@ -302,7 +236,7 @@
                 <a href="terms.html" target="_blank">Terms & Conditions</a>
             </div>
             <div class="copyright-text">
-                &copy; 2026 JANATA BANK PLC. All Rights Reserved. &bull; Official Digital Verification Portal
+                &copy; 2026 JANATA BANK PLC. All Rights Reserved. &bull; Core Banking Automated Certificate
             </div>
         </div>
 
@@ -325,12 +259,12 @@
         document.getElementById('accountName').innerText = data.name || '---';
         document.getElementById('amount').innerText = data.amount || '---';
         document.getElementById('date').innerText = data.date || '---';
-        document.getElementById('statusText').innerText = data.statusText || '✔ 100% VERIFIED SUCCESS';
+        document.getElementById('statusText').innerText = data.statusText || 'VERIFIED SUCCESSFUL';
     } else {
         document.getElementById('mainCard').innerHTML = `
             <div class="error-box">
-                <h3 style="color: #dc2626; margin-bottom: 8px; font-size: 18px;">⚠️ তথ্য পাওয়া যায়নি!</h3>
-                <p style="font-size: 13.5px; color: #64748b; margin: 0;">সঠিক কিউআর কোড স্ক্যান করুন অথবা লিঙ্কটি সঠিকভাবে যাচাই করুন।</p>
+                <h3 style="color: #dc2626; margin-bottom: 8px; font-size: 16px;">⚠️ তথ্য পাওয়া যায়নি!</h3>
+                <p style="font-size: 13px; color: #64748b; margin: 0;">সঠিক কিউআর কোড স্ক্যান করুন অথবা লিঙ্কটি যাচাই করুন।</p>
             </div>
         `;
     }
