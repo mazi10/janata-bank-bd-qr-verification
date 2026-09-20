@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Janata Bank PLC. - Secure Digital Verification Certificate</title>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Inter:wght@400;500;600;700;800&family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; }
         body { 
             font-family: 'Inter', 'Hind Siliguri', sans-serif; 
-            background: linear-gradient(135deg, #e6f4ed 0%, #f8fafc 100%); 
+            background: linear-gradient(135deg, #f0fdf4 0%, #e2e8f0 100%); 
             margin: 0; 
             padding: 30px 15px; 
             display: flex; 
@@ -24,73 +24,72 @@
             background: #ffffff;
             width: 100%;
             max-width: 620px;
-            padding: 40px;
-            border-radius: 12px;
-            box-shadow: 0 20px 45px rgba(0, 106, 78, 0.15);
-            border: 1.5px solid #a7f3d0;
+            padding: 45px 40px;
+            border-radius: 16px;
+            box-shadow: 0 25px 50px rgba(0, 106, 78, 0.12);
+            border: 1px solid #bbf7d0;
             position: relative;
             overflow: hidden;
         }
 
-        /* Top Vibrant Official Accent Border */
-        .top-accent {
+        /* Background Watermark Logo */
+        .doc-wrapper::before {
+            content: "";
             position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 6px;
-            background: linear-gradient(90deg, #006a4e, #10b981, #047857, #006a4e);
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 320px;
+            height: 320px;
+            background: url('janata-logo.png') no-repeat center center;
+            background-size: contain;
+            opacity: 0.04;
+            pointer-events: none;
+            z-index: 0;
         }
 
-        /* Bank Official Header */
-        .bank-header {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 2px solid #006a4e;
-            padding-bottom: 20px;
+        .content-layer {
+            position: relative;
+            z-index: 1;
+        }
+
+        /* Top Vibrant Accent Border */
+        .top-accent {
+            position: absolute;
+            top: -45px;
+            left: -40px;
+            right: -40px;
+            height: 6px;
+            background: linear-gradient(90deg, #006a4e, #10b981, #047857);
+        }
+
+        /* Centered Bank Header */
+        .bank-header-center {
+            text-align: center;
+            border-bottom: 2px solid #e2e8f0;
+            padding-bottom: 25px;
             margin-bottom: 25px;
-            margin-top: 5px;
         }
-        .bank-logo-area {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-        .bank-logo-area img {
-            height: 55px;
+        .bank-logo-center {
+            height: 65px;
             width: auto;
             object-fit: contain;
+            margin-bottom: 12px;
         }
-        .bank-title-text h1 {
-            font-size: 20px;
+        .bank-header-center h1 {
+            font-size: 26px;
             color: #006a4e;
             margin: 0;
             font-weight: 800;
-            letter-spacing: 0.5px;
+            letter-spacing: 1px;
         }
-        .bank-title-text p {
-            font-size: 11px;
-            color: #475569;
-            margin: 3px 0 0 0;
+        .bank-header-center p {
+            font-size: 12px;
+            color: #64748b;
+            margin: 5px 0 0 0;
             text-transform: uppercase;
-            letter-spacing: 1.2px;
+            letter-spacing: 1.5px;
             font-weight: 600;
-        }
-
-        .auth-badge {
-            background: linear-gradient(135deg, #059669 0%, #047857 100%);
-            color: #ffffff;
-            padding: 7px 14px;
-            border-radius: 6px;
-            font-size: 11px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.8px;
-            box-shadow: 0 4px 10px rgba(5, 150, 105, 0.25);
-            display: flex;
-            align-items: center;
-            gap: 5px;
         }
 
         /* Certificate Title Section */
@@ -98,12 +97,12 @@
             text-align: center;
             margin-bottom: 25px;
             background: #f0fdf4;
-            padding: 15px;
-            border-radius: 8px;
+            padding: 16px;
+            border-radius: 10px;
             border: 1px dashed #059669;
         }
         .cert-title-box h3 {
-            font-size: 15.5px;
+            font-size: 16px;
             color: #006a4e;
             text-transform: uppercase;
             margin: 0 0 5px 0;
@@ -111,7 +110,7 @@
             font-weight: 700;
         }
         .cert-title-box span {
-            font-size: 12px;
+            font-size: 12.5px;
             color: #475569;
             font-weight: 500;
         }
@@ -122,7 +121,7 @@
             border-collapse: collapse;
             margin-bottom: 25px;
             background: #fcfcfc;
-            border-radius: 8px;
+            border-radius: 10px;
             overflow: hidden;
             border: 1px solid #e2e8f0;
         }
@@ -133,8 +132,8 @@
             border-bottom: none;
         }
         .statement-table td {
-            padding: 15px 16px;
-            font-size: 14px;
+            padding: 16px 18px;
+            font-size: 14.5px;
         }
         .statement-table td.label-col {
             color: #475569;
@@ -149,31 +148,38 @@
         }
         .statement-table td.value-col.highlight {
             color: #006a4e;
-            font-size: 17.5px;
+            font-size: 18px;
             font-weight: 800;
         }
 
-        /* Authentic Digital Security Stamp */
-        .security-stamp {
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
-            border: 1px solid #cbd5e1;
-            padding: 16px;
-            border-radius: 8px;
+        /* Bottom Status & Security Stamp Section */
+        .bottom-status-section {
             display: flex;
             align-items: center;
             justify-content: space-between;
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border: 1px solid #cbd5e1;
+            padding: 18px;
+            border-radius: 10px;
             margin-bottom: 25px;
         }
-        .stamp-left {
-            font-size: 12px;
-            color: #475569;
-            line-height: 1.4;
+        .status-badge-box {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
         }
-        .stamp-left strong {
-            color: #0f172a;
-            display: block;
-            margin-bottom: 2px;
-            font-size: 13px;
+        .auth-badge {
+            background: linear-gradient(135deg, #059669 0%, #047857 100%);
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            display: inline-block;
+            box-shadow: 0 3px 8px rgba(5, 150, 105, 0.2);
+            text-align: center;
         }
         .stamp-right {
             font-family: 'Cinzel', serif;
@@ -182,8 +188,8 @@
             font-weight: 700;
             background: #ffffff;
             border: 1.5px solid #006a4e;
-            padding: 5px 10px;
-            border-radius: 5px;
+            padding: 6px 12px;
+            border-radius: 6px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.04);
         }
 
@@ -232,77 +238,74 @@
 
 <div class="doc-wrapper" id="mainCard">
     <div class="top-accent"></div>
+    <div class="content-layer">
 
-    <!-- Bank Header with Official Logo -->
-    <div class="bank-header">
-        <div class="bank-logo-area">
-            <!-- Reliable direct PNG image for Janata Bank Logo -->
-            <img src="https://i.ibb.co.com/84c3n7P/Janata-Bank-Limited-Logo.png" alt="Janata Bank Logo" onerror="this.src='janata-logo.png'">
-            <div class="bank-title-text" id="headerBox">
+        <!-- Centered Bank Header with Watermark & Big Title -->
+        <div class="bank-header-center">
+            <img src="janata-logo.png" alt="Janata Bank Logo" class="bank-logo-center" onerror="this.src='https://i.ibb.co.com/84c3n7P/Janata-Bank-Limited-Logo.png'">
+            <div id="headerBox">
                 <h1>JANATA BANK PLC.</h1>
-                <p>Central Verification Gateway</p>
+                <p>Central Core Verification Gateway</p>
             </div>
         </div>
-        <div>
-            <div class="auth-badge" id="statusText">✔ 100% VERIFIED</div>
-        </div>
-    </div>
 
-    <!-- Certificate Title Box -->
-    <div class="cert-title-box">
-        <h3>Official Digital Balance & Statement Certificate</h3>
-        <span>Secured & Authenticated via Janata Bank Cryptographic QR Protocol</span>
-    </div>
+        <!-- Certificate Title Box -->
+        <div class="cert-title-box">
+            <h3>Official Digital Balance & Statement Certificate</h3>
+            <span>Secured & Authenticated via Janata Bank Cryptographic QR Protocol</span>
+        </div>
 
-    <!-- Data Table -->
-    <table class="statement-table">
-        <tr>
-            <td class="label-col">Account Number</td>
-            <td class="value-col" id="accountNo">---</td>
-        </tr>
-        <tr>
-            <td class="label-col">Account Holder Name</td>
-            <td class="value-col" id="accountName">---</td>
-        </tr>
-        <tr>
-            <td class="label-col">Verified Balance / Amount</td>
-            <td class="value-col highlight" id="amount">---</td>
-        </tr>
-        <tr>
-            <td class="label-col">Report Generation Date</td>
-            <td class="value-col" id="date">---</td>
-        </tr>
-    </table>
+        <!-- Data Table -->
+        <table class="statement-table">
+            <tr>
+                <td class="label-col">Account Number</td>
+                <td class="value-col" id="accountNo">---</td>
+            </tr>
+            <tr>
+                <td class="label-col">Account Holder Name</td>
+                <td class="value-col" id="accountName">---</td>
+            </tr>
+            <tr>
+                <td class="label-col">Verified Balance / Amount</td>
+                <td class="value-col highlight" id="amount">---</td>
+            </tr>
+            <tr>
+                <td class="label-col">Report Generation Date</td>
+                <td class="value-col" id="date">---</td>
+            </tr>
+        </table>
 
-    <!-- Security Stamp -->
-    <div class="security-stamp">
-        <div class="stamp-left">
-            <strong>Secured Financial Document</strong>
-            This digital document is generated securely from Janata Bank automated core server and verified successfully.
+        <!-- Bottom Status & Security Section -->
+        <div class="bottom-status-section">
+            <div class="status-badge-box">
+                <span style="font-size: 11px; color: #64748b; font-weight: 600; margin-bottom: 2px;">DOCUMENT STATUS</span>
+                <div class="auth-badge" id="statusText">✔ 100% VERIFIED SUCCESS</div>
+            </div>
+            <div class="stamp-right">
+                JB-SECURE-256
+            </div>
         </div>
-        <div class="stamp-right">
-            JB-SECURE-256
-        </div>
-    </div>
 
-    <!-- Footer Links -->
-    <div class="doc-footer">
-        <div class="footer-links">
-            <a href="about.html" target="_blank">About Us</a>
-            <span>&bull;</span>
-            <a href="help.html" target="_blank">Help Center</a>
-            <span>&bull;</span>
-            <a href="faq.html" target="_blank">FAQ</a>
-            <span>&bull;</span>
-            <a href="contact.html" target="_blank">Contact Us</a>
-            <span>&bull;</span>
-            <a href="privacy.html" target="_blank">Privacy Policy</a>
-            <span>&bull;</span>
-            <a href="terms.html" target="_blank">Terms & Conditions</a>
+        <!-- Footer Links -->
+        <div class="doc-footer">
+            <div class="footer-links">
+                <a href="about.html" target="_blank">About Us</a>
+                <span>&bull;</span>
+                <a href="help.html" target="_blank">Help Center</a>
+                <span>&bull;</span>
+                <a href="faq.html" target="_blank">FAQ</a>
+                <span>&bull;</span>
+                <a href="contact.html" target="_blank">Contact Us</a>
+                <span>&bull;</span>
+                <a href="privacy.html" target="_blank">Privacy Policy</a>
+                <span>&bull;</span>
+                <a href="terms.html" target="_blank">Terms & Conditions</a>
+            </div>
+            <div class="copyright-text">
+                &copy; 2026 JANATA BANK PLC. All Rights Reserved. &bull; Official Digital Verification Portal
+            </div>
         </div>
-        <div class="copyright-text">
-            &copy; 2026 JANATA BANK PLC. All Rights Reserved. &bull; Official Digital Verification Portal
-        </div>
+
     </div>
 </div>
 
@@ -322,7 +325,7 @@
         document.getElementById('accountName').innerText = data.name || '---';
         document.getElementById('amount').innerText = data.amount || '---';
         document.getElementById('date').innerText = data.date || '---';
-        document.getElementById('statusText').innerText = data.statusText || '✔ 100% VERIFIED';
+        document.getElementById('statusText').innerText = data.statusText || '✔ 100% VERIFIED SUCCESS';
     } else {
         document.getElementById('mainCard').innerHTML = `
             <div class="error-box">
